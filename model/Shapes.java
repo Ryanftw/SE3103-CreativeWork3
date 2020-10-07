@@ -15,6 +15,9 @@ public abstract class Shapes {
         this.color = color; 
     }
 
+    //DRAW OVAL
+    //DRAW POLYGON
+
     public float getX() {
         return x; 
     }

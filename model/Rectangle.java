@@ -22,6 +22,14 @@ public class Rectangle extends Shapes {
         return height;
     }
 
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public void setWidth(float width) {
+        this.width = width;
+    }
+
     @Override
     public float getArea() {
         return width*height; 
