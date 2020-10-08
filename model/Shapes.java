@@ -26,6 +26,14 @@ public abstract class Shapes {
         return y; 
     }
 
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
     public Color getColor() {
         return color; 
     }
@@ -35,6 +43,9 @@ public abstract class Shapes {
         return "[Shape: (" + x + ", " + y + ", area = " + getArea() + ")]";
     }
     
+
+    public abstract float getZ();
+    public abstract float setZ(float z);
     public abstract float getArea();
     public abstract void render(Graphics2D g2); 
 

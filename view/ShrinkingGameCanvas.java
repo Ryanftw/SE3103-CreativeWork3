@@ -19,9 +19,9 @@ public class ShrinkingGameCanvas extends JPanel {
 
     public ShrinkingGameCanvas(ShrinkingShapes panel) {
         this.panel = panel;
-        setPreferredSize(new Dimension(500, 500));
+        setPreferredSize(new Dimension(750, 750));
         setBackground(Color.black);
-        timer = new Timer(5, panel.getListener());
+        //timer = new Timer(5, panel.getListener());
     }
 
     @Override
@@ -32,12 +32,12 @@ public class ShrinkingGameCanvas extends JPanel {
         if(panel.getState() == ShrinkingShapes.GameState.READY) {
             g2.setColor(Color.red); 
             g2.setFont(new Font("Arial", Font.BOLD, 36));
-            g2.drawString("Select New Game to start", 35, 250);
+            g2.drawString("Select New Game to start", 160, 375);
         } else {
             if(panel.getState() == ShrinkingShapes.GameState.GAMEOVER) {
                 g2.setColor(Color.red); 
                 g2.setFont(new Font("Arial", Font.BOLD, 36));
-                g2.drawString("GAME OVER", 150, 350);
+                g2.drawString("GAME OVER", 250, 375);
             }
             for(var s : shapes) {
                 s.render(g2);
@@ -49,6 +49,21 @@ public class ShrinkingGameCanvas extends JPanel {
     
     public ArrayList<Shapes> getShapes() {
         return shapes;
+    }
+
+    public void startGameTimer() {
+        timer = new Timer(5, panel.getListener());
+        timer.setDelay(250);
+        timer.setRepeats(true);
+        timer.start();
+    }
+
+    public void stopGameTimer() {
+        timer.stop();
+    }
+
+    public void restartTimer() {
+        timer.restart();
     }
 
     public Timer getTimer() {

@@ -1,10 +1,12 @@
 package view;
 
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.BorderLayout;
 import java.awt.GridLayout; 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import controller.ShapeEventListener;
 
@@ -17,6 +19,8 @@ public class ShrinkingShapes {
     private GameState state = GameState.READY;
     private JButton newGameButton;
     private JButton exitButton; 
+    private JLabel missed;
+    private JLabel points; 
     private JFrame window; 
     private ShrinkingGameCanvas canvas; 
     ShapeEventListener listener;
@@ -32,6 +36,17 @@ public class ShrinkingShapes {
         Container cp = window.getContentPane();
         JPanel southPanel = new JPanel();
         cp.add(BorderLayout.SOUTH, southPanel); 
+        
+        JPanel northPanel = new JPanel();
+        cp.add(BorderLayout.NORTH, northPanel);
+        northPanel.setLayout(new GridLayout(2, 1));
+        missed = new JLabel("Missed : ");
+        points = new JLabel("Points : ");
+
+        northPanel.add(points);
+        points.setFont(new Font("Arial", Font.BOLD, 20));
+        northPanel.add(missed);
+        missed.setFont(new Font("Arial", Font.BOLD, 20));
 
         JPanel buttonPanel1 = new JPanel(); 
         newGameButton = new JButton("New Game"); 
@@ -76,5 +91,13 @@ public class ShrinkingShapes {
 
     public ShapeEventListener getListener(){ 
         return listener;
+    }
+
+    public void setMissed(String miss) {
+        missed.setText("Missed : " + miss);
+    }
+
+    public void setPoints(String pts) {
+        points.setText("Points : " + pts);
     }
 }
