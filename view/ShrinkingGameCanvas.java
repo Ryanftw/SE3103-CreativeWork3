@@ -21,7 +21,6 @@ public class ShrinkingGameCanvas extends JPanel {
         this.panel = panel;
         setPreferredSize(new Dimension(750, 750));
         setBackground(Color.black);
-        //timer = new Timer(5, panel.getListener());
     }
 
     @Override

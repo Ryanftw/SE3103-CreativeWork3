@@ -29,9 +29,6 @@ public class ShrinkingShapes {
         this.window = window;
     }
 
-    //DRAW OVAL
-    //DRAW POLYGON
-
     public void init() {
         Container cp = window.getContentPane();
         JPanel southPanel = new JPanel();

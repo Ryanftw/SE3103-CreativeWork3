@@ -82,12 +82,6 @@ public class ShapeEventListener implements ActionListener, MouseListener {
                 case 1 : 
                     panel.getCanvas().getShapes().add(new Square(rand.nextInt((565-15) +1) + 70, rand.nextInt((565-15) +1) + 70, Color.red, rand.nextInt((175-50) +1)/difficulty + 50));
                     break;
-                // case 3 : 
-                //     Triangle triangle = new Triangle(rand.nextInt(500), rand.nextInt(500), Color.red);
-                //     for(int i = 0; i < 3; i++) 
-                //     triangle.setPos(i, rand.nextInt(250), rand.nextInt(250));
-                //     panel.getCanvas().getShapes().add(triangle);//(rand.nextInt(500), rand.nextInt(500), Color.red, rand.nextInt(250)));
-                //     break;
             }
         }
         pts++;
